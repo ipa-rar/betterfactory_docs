@@ -17,3 +17,6 @@
 	- `rosrun tf static_transform_publisher 0 0 0 0 0 0 1 map cloud 10`
 	- `rosrun rviz rviz`
 	- Laser data is published on `/scan`
+	
+## Data
+- This contains the rosbag recording of the complete system
