@@ -93,10 +93,6 @@ Once you have started up the entire system you can check the contents in the OCB
     ```
     http://localhost:1026/v2/types
     ```
-## Docker launch
--
-
-
 ## References
 - [FIROS readthedocs](https://firos.readthedocs.io/en/latest/)
 - [Swagger firos API endpoints reference](https://swagger.lab.fiware.org/?url=https://raw.githubusercontent.com/Fiware/specifications/master/OpenAPI/ngsiv2/ngsiv2-openapi.json#/)
