@@ -110,27 +110,7 @@ ssh-keygen -A
 ssh-copy-id username@ip_address
 ````
 
-#### Setup ROS_MASTER_URI and ROS_IP in the ~/.bashrc of the master PC
-
-````shell
-echo "export ROS_MASTER_URI=http://192.168.1.185:11311" >> ~/.bashrc
-echo "export ROS_IP 192.168.1.185" >> ~/.bashrc
-source ~/.bashrc
-````
-
-
-
-### After SSH login to the slave devices
-
-#### Install ROS Noetic
-
-````shell
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-sudo apt update 
-sudo apt install ros-noetic-desktop -y
-source /opt/ros/noetic/setup.bash
-sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator -y python3-wstool build-essential -y
+#### Setup ROS_MASTER_URI and ROS_IP in the ~/.bashrc of the master PCC:\Users\rar\Desktopl build-essential -y
 sudo apt install python3-rosdep
 sudo rosdep init
 sudo rosdep update
@@ -233,5 +213,5 @@ $ rosservice list
 <img src=".\img\full_system.png" alt="full_system" style="zoom:50%;" />
 
 ### Rviz 
-![rviz](.\img\rviz.png)
+<img src=".\img\rviz.png" alt="rviz" style="zoom:50%;" />
 
