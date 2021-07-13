@@ -10,13 +10,13 @@ sudo snap install rpi-imager
 
 Once you have installed Raspberry Pi Imager tool, find and open it and click on the “**CHOOSE OS**” menu.
 
-<img src="https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/09/raspberry-pi-imager.png?resize=800%2C600&ssl=1" alt="Raspberry Pi Imager" style="zoom:67%;" />
+<img src="https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/09/raspberry-pi-imager.png?resize=800%2C600&ssl=1" alt="Raspberry Pi Imager" style="zoom:50%;" />
 
 
 
 Scroll across the menu and click on “Ubuntu” (Core and Server Images).
 
-<img src="https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/09/raspberry-pi-imager-choose-ubuntu.png?resize=800%2C600&ssl=1" alt="Raspberry Pi Imager Choose Ubuntu" style="zoom:67%;" />
+<img src="https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/09/raspberry-pi-imager-choose-ubuntu.png?resize=800%2C600&ssl=1" alt="Raspberry Pi Imager Choose Ubuntu" style="zoom:50%;" />
 
 
 
@@ -24,11 +24,11 @@ Scroll across the menu and click on “Ubuntu” (Core and Server Images).
 
 For raspberry pi 4, I choose the Ubuntu 20.04 LTS 64 bit.
 
-<img src="https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/09/raspberry-pi-imager-ubuntu-server.png?resize=800%2C600&ssl=1" alt="Raspberry Pi Imager Ubuntu Server" style="zoom:67%;" />
+<img src="https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/09/raspberry-pi-imager-ubuntu-server.png?resize=800%2C600&ssl=1" alt="Raspberry Pi Imager Ubuntu Server" style="zoom:50%;" />
 
 Select your microSD card from the “SD Card” menu, and click on “WRITE”after.
 
-<img src="https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/09/raspberry-pi-imager-sd-card.png?resize=800%2C600&ssl=1" alt="Raspberry Pi Imager Sd Card" style="zoom:67%;" />
+<img src="https://i1.wp.com/itsfoss.com/wp-content/uploads/2020/09/raspberry-pi-imager-sd-card.png?resize=800%2C600&ssl=1" alt="Raspberry Pi Imager Sd Card" style="zoom:50%;" />
 
 ## Step 2: Use Ubuntu server on Raspberry Pi (if you have dedicated monitor, keyboard and mouse for Raspberry Pi)
 
@@ -225,20 +225,13 @@ $ rosservice list
 ````
 
 ### TF tree
-
-
-
-<img src="C:\Users\rar\Desktop\img\frames.png" alt="frames" style="zoom:67%;" />
-
-
-
+<img src=".\img\frames.png" alt="frames" style="zoom:50%;" />
 
 
 ### ROS node graph
 
-<img src="C:\Users\rar\Desktop\img\full_system.png" alt="full_system" style="zoom:67%;" />
+<img src=".\img\full_system.png" alt="full_system" style="zoom:50%;" />
 
 ### Rviz 
-
-![rviz](C:\Users\rar\Desktop\img\rviz.png)
+![rviz](.\img\rviz.png)
 
