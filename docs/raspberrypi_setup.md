@@ -42,7 +42,7 @@ Select your microSD card from the “SD Card” menu, and click on “WRITE”af
 sudo nano /etc/netplan/50-cloud-init.yaml
 ````
 
-Add these lines to the file, change the <IP> for the desired new node (slave RPi) IP.
+Add these lines to the file, change the \<IP\> for the desired new node (slave RPi) IP.
 
 ````yaml
     wifis:
@@ -167,7 +167,7 @@ source ~/lidar_ws/devel/setup.bash
 
 ## Step 6: Configure bashrc file for automatic initialization
 
-Add the following lines to the .bashrc file (Replace <IP> for the slave RPi IP configured in step 2 and <NodeNumber> for the desired Node number identifier):
+Add the following lines to the .bashrc file (Replace \<IP\> for the slave RPi IP configured in step 2 and \<NodeNumber\> for the desired Node number identifier):
  
 ````shell
 alias c=clear
