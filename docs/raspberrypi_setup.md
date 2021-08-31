@@ -20,8 +20,6 @@ Scroll across the menu and click on “Ubuntu” (Core and Server Images).
 
 
 
-
-
 For raspberry pi 4, I choose the Ubuntu 20.04 LTS 64 bit.
 
 <img src="https://i0.wp.com/itsfoss.com/wp-content/uploads/2020/09/raspberry-pi-imager-ubuntu-server.png?resize=800%2C600&ssl=1" alt="Raspberry Pi Imager Ubuntu Server" style="zoom:50%;" />
@@ -44,19 +42,23 @@ Select your microSD card from the “SD Card” menu, and click on “WRITE”af
 sudo nano /etc/netplan/50-cloud-init.yaml
 ````
 
-Add these lines to the file
+Add these lines to the file, change the \<IP\> for the desired new node (slave RPi) IP.
 
 ````yaml
-wifis:
-    wlan0:
-    	dhcp4: true
-    	optional: true
-     	access-points:
-        	academy
-                password: "ros-industrial"
+    wifis:
+        wlan0:
+          dhcp4: true
+          optional: true
+          addresses: [<IP>/24]
+          gateway4: 192.168.1.1
+          nameservers:
+              addresses: [192.168.1.1, 8.8.8.8]
+          access-points:
+              academy:
+                  password: "ros-industrial"
 ````
 
-**note**: Use only 4 spaces for each intend and do not use tab
+**note**: Use 4 spaces indentation only
 
 ````shell
 sudo netplan apply
@@ -124,7 +126,22 @@ echo "export ROS_IP 192.168.1.xxx" >> ~/.bashrc  ## The ip_address of the slave 
 source ~/.bashrc
 ````
 
-## Step 4: Install the ROS packages for the RPLidar application
+## Step 4: Install and configure ROS Noetic on Slave RPi
+
+Run the following commands or just follow the instructions from [here](http://wiki.ros.org/noetic/Installation/Ubuntu):
+
+````shell
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt install curl
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+sudo apt update
+sudo apt install ros-noetic-desktop
+sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+sudo rosdep init
+rosdep update
+````
+
+## Step 5: Install the ROS packages for the RPLidar application
 
 ````shell
 # Create a new ROS workspace
@@ -147,7 +164,32 @@ cd ~/lidar_ws && catkin_make
 source ~/lidar_ws/devel/setup.bash
 ````
 
-## Step 5: Start the Lidar application on the Raspberry Pi
+## Step 6: Configure bashrc file for automatic initialization
+
+Add the following lines to the .bashrc file (Replace \<IP\> for the slave RPi IP configured in step 2 and \<NodeNumber\> for the desired Node number identifier):
+ 
+````shell
+alias c=clear
+PS1='\[\033[1;36m\]\u\[\033[1;31m\]@\[\033[1;32m\]\h:\[\033[1;35m\]\w\[\033[1;31m\]$\[\033[0m\] '
+source /opt/ros/noetic/setup.bash
+source ~/lidar_ws/devel/setup.bash
+export ROS_IP=<IP>
+BRed='\033[1;31m'         # Red
+BGreen='\033[1;32m'       # Green
+BYellow='\033[1;33m'      # Yellow
+BBlue='\033[1;34m'        # Blue
+echo -e "${BYellow}NODE <NodeNumber>"
+echo -e $'\n'${BGreen}$ROS_IP
+echo -e $'\n'
+````
+
+Source your .bashrc file
+
+````shell
+source ~/.bashrc
+````
+
+## Step 7: Start the Lidar application on the Raspberry Pi
 
 ### On master PC
 
